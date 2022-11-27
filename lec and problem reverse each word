@@ -1,0 +1,33 @@
+public class Solution {
+
+	public static String reverseEachWord(String str) {
+		//Your code goes here
+		String ans = "";
+		int currentwordstart =  0;
+		int i = 0;
+		for(; i < str.length() ; i++){
+			if(str.charAt(i) == ' '){
+				//reverse the current word
+				int currentwordend = i -1 ;
+				String reversedword = "";
+				for(int j = currentwordstart ; j <= currentwordend ; j++){
+					reversedword = str.charAt(j) + reversedword ;
+				}
+				// add it to final string 
+				ans += reversedword + " ";
+				currentwordstart = i + 1;
+			}
+		}
+		int currentwordend = i -1 ;
+				String reversedword = "";
+				for(int j = currentwordstart ; j <= currentwordend ; j++){
+					reversedword = str.charAt(j) + reversedword ;
+				}
+				// add it to final string 
+				ans += reversedword;
+				return ans;
+
+
+	}
+
+}
