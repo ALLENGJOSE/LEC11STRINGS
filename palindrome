@@ -1,0 +1,15 @@
+public class Solution {
+
+	public static boolean isPalindrome(String str) {
+		//Your code goes here
+		String reversedword = "";
+		for(int i = 0  ; i < str.length() ; i++){
+				reversedword = str.charAt(i) + reversedword ;
+		}
+		if(reversedword.equals(str)){
+			return true ;
+	}else{
+		return false;
+	}
+	}
+}
