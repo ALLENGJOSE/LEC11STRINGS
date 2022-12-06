@@ -1,0 +1,23 @@
+public class Solution {
+	public static String reverseWordWise(String str) {
+		// Write your code here
+    if(str.length() ==0){
+		return"";
+	}
+  int n = str.length();
+	int wordstart;
+	int wordend = n;
+	String reversedstring = "";
+	int i ;
+	for(i = n - 1 ; i>=0 ; i--){
+		if(str.charAt(i) == ' '){
+         wordstart = i + 1;
+    reversedstring += str.substring(wordstart , wordend) + " ";
+	     wordend = i ;
+		}
+	}
+	wordstart = i + 1;
+	reversedstring += str.substring(wordstart, wordend);
+	return reversedstring;
+	}
+}
