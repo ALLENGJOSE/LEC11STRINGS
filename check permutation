@@ -1,0 +1,30 @@
+public class Solution {
+
+	public static boolean isPermutation(String str1, String str2) {
+		//Your code goes here
+		int n1 = str1.length();
+      int n2 = str2.length();
+
+	  int[]  freq = new int[255];
+	  if(n1 != n2){
+		  return false;
+	  }
+
+	  if(n1 == n2){
+		  for(int i = 0 ; i < n1 ; i++){
+			  	int var = (int) str1.charAt(i);
+				freq[var]++;
+		  }
+		  for(int j = 0; j<n2; j++){
+                    int var = (int)str2.charAt(j);
+                    
+                    if (freq[var]!=0){
+                        freq[var]--;
+                    }else{
+                        return false;
+					}
+                    }
+	  }
+	  return true;
+	}
+}
